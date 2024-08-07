@@ -88,7 +88,7 @@
   animation: slideOff 0.3s linear forwards;
 }
 .theme-button-container input:checked + label {
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .theme-button-container input:checked + label .theme-toggle-ball {
   animation: slideOn 0.3s linear forwards;

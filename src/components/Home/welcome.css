@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+.welcoming-image {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+.welcoming-image::before {
+  content: "";
+  /* design */
+  background-color: black;
+  opacity: 0.75;
+  /* position */
+  position: absolute;
+  /* size */
+  width: 100%;
+  height: 100%;
+}
+.welcoming-image img {
+  /* layout */
+  object-fit: cover;
+  /* size */
+  width: 100%;
+  height: 100%;
+}
+.welcoming-image h1 {
+  /* design */
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 42px;
+  /* size */
+  width: 100%;
+  /* position */
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+.welcome-chevron-one {
+  /* design */
+  font-size: 50px;
+  color: white;
+  /* position */
+  position: absolute;
+  top: 90%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  animation: oneMove 1s ease alternate infinite;
+}
+.welcome-chevron-two {
+  /* design */
+  font-size: 50px;
+  color: white;
+  /* position */
+  position: absolute;
+  top: 95%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  animation: twoMove 1s ease alternate infinite;
+}
+@keyframes oneMove {
+  0% {
+    top: 90%;
+    opacity: 1;
+  }
+  100% {
+    top: 92%;
+    opacity: 0;
+  }
+}
+@keyframes twoMove {
+  0% {
+    top: 92%;
+    opacity: 1;
+  }
+  100% {
+    top: 95%;
+    opacity: 0;
+  }
+}
