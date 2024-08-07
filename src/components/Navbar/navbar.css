@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+.navbar-container {
+  /* design */
+  background-color: white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.75);
+  /* layout */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  /* size */
+  height: 50px;
+  /* position */
+  position: relative;
+  z-index: 99;
+  /* animation */
+  transition: all 0.3s ease;
+}
+/* ---- list ---- */
+.navbar-container ul {
+  /* design */
+  font-family: "Josefin Sans", sans-serif;
+  /* layout */
+  display: flex;
+  justify-content: space-around;
+  /* size */
+}
+
+/* ---- logo ---- */
+.navbar-company-logo {
+  /* design */
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+  /* layout */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* size */
+  height: 100%;
+}
+.navbar-company-logo img {
+  /* layout */
+  object-fit: cover;
+  /* size */
+  height: 100%;
+}
+/* toggle button */
+.theme-button-container {
+  /* layout */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* position */
+  position: absolute;
+  right: 50px;
+  top: 45px;
+  transform: translateX(50%);
+  z-index: 100;
+}
+.theme-button-container input {
+  /* design */
+  visibility: hidden;
+}
+.theme-button-container label {
+  /* design */
+  cursor: pointer;
+  background-color: #d0d0d0;
+  border-radius: 25px;
+  /* size */
+  width: 65px;
+  height: 20px;
+  /* positon */
+  position: relative;
+}
+.theme-toggle-ball {
+  /* design */
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 165, 0, 0.75);
+  /* size */
+  width: 15px;
+  height: 15px;
+  /* positon */
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  animation: slideOff 0.3s linear forwards;
+}
+.theme-button-container input:checked + label {
+  background-color: white;
+}
+.theme-button-container input:checked + label .theme-toggle-ball {
+  animation: slideOn 0.3s linear forwards;
+}
+
+@keyframes slideOn {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    transform: translateX(42.5px) scale(1);
+  }
+}
+
+@keyframes slideOff {
+  0% {
+    transform: translateX(34px) scale(1);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
