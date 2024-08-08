@@ -1,0 +1,22 @@
+.testimonials-section-container {
+  /* design */
+  overflow-x: scroll;
+  overscroll-behavior-inline: contain;
+  /* layout */
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+}
+.testimonials-user-container {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #e8e8e8;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  /* size */
+  width: 300px;
+}

@@ -84,7 +84,141 @@ const dishes = [
     rating: 4.8,
   },
 ];
-
+const users = [
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Great service!",
+    username: "userA1",
+    rating: 5,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Very satisfied with the product.",
+    username: "userB2",
+    rating: 3,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Excellent quality!",
+    username: "userC3",
+    rating: 4,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Will buy again!",
+    username: "userD4",
+    rating: 5,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Highly recommend this.",
+    username: "userE5",
+    rating: 2,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Not as expected.",
+    username: "userF6",
+    rating: 1,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Good value for money.",
+    username: "userG7",
+    rating: 4,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Fast shipping.",
+    username: "userH8",
+    rating: 5,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Decent quality.",
+    username: "userI9",
+    rating: 3,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Amazing product!",
+    username: "userJ10",
+    rating: 5,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Not worth the price.",
+    username: "userK11",
+    rating: 2,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Loved it!",
+    username: "userL12",
+    rating: 5,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Just okay.",
+    username: "userM13",
+    rating: 3,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Great experience.",
+    username: "userN14",
+    rating: 4,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Would buy again.",
+    username: "userO15",
+    rating: 5,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Quality could be better.",
+    username: "userP16",
+    rating: 2,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Exceeded expectations.",
+    username: "userQ17",
+    rating: 5,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Quite satisfactory.",
+    username: "userR18",
+    rating: 4,
+  },
+  {
+    profileImage:
+      "https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=",
+    comment: "Not happy with it.",
+    username: "userS19",
+    rating: 1,
+  },
+];
 const ContextProvider = ({ children }) => {
   const [theme, setTheme] = React.useState("light");
   const colorOne = theme === "light" ? "white" : "black";
@@ -96,7 +230,7 @@ const ContextProvider = ({ children }) => {
   }, [theme]);
   return (
     <GlobalContext.Provider
-      value={{ theme, changeTheme, colorOne, colorTwo, dishes }}
+      value={{ theme, changeTheme, colorOne, colorTwo, dishes, users }}
     >
       {children}
     </GlobalContext.Provider>

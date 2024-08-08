@@ -1,8 +1,6 @@
 import "./hero.css";
 import React from "react";
-import { GlobalContext } from "../../context/GlobalContext";
 const Hero = () => {
-  const { colorOne, colorTwo } = React.useContext(GlobalContext);
   const atmosphere = `${process.env.PUBLIC_URL}/images/atmosphere.jpg`;
   return (
     <section className="hero-section-container w-[100%] md:w-[90%]">
