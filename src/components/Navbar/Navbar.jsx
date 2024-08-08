@@ -24,6 +24,7 @@ const Navbar = () => {
           {pages.map((page) => {
             return (
               <NavLink
+                key={page}
                 to={`/${page === "Home" ? "" : page.toLowerCase()}`}
                 className="cursor-pointer text-lg"
                 onClick={() => setActive(page)}
@@ -34,10 +35,10 @@ const Navbar = () => {
             );
           })}
         </ul>
-        <div class="theme-button-container">
+        <div className="theme-button-container">
           <input type="checkbox" id="theme" onClick={changeTheme} />
-          <label for="theme">
-            <div class="theme-toggle-ball"></div>
+          <label htmlFor="theme">
+            <div className="theme-toggle-ball"></div>
           </label>
           <span className="text-sm font-semibold lg:text-lg text-white">
             {theme === "dark" ? "Dark Mode" : "Light Mode"}
