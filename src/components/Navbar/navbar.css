@@ -104,7 +104,7 @@
 .theme-btn-container input:checked + label .theme-toggle-ball {
   animation: slideOn 0.5s linear forwards;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 768px) {
   .nav-container {
     /* layout */
     flex-direction: column;
@@ -151,6 +151,11 @@
     position: absolute;
     top: 10px;
     right: -50px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .theme-btn-container span {
+    color: white;
   }
 }
 /* custom animation */

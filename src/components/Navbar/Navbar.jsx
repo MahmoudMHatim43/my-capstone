@@ -59,7 +59,7 @@ const Navbar = () => {
           <label htmlFor="theme-btn">
             <div className="theme-toggle-ball"></div>
           </label>
-          <span className=" text-sm lg:text-lg font-semibold">
+          <span className="text-md lg:text-lg font-semibold">
             {theme === "light" ? "Light Mode" : "Dark Mode"}
           </span>
         </div>
