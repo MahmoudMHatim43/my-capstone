@@ -5,7 +5,7 @@ const About = () => {
   const foundersOne = `${process.env.PUBLIC_URL}/images/Mario-and-Adrian-1.jpg`;
   const foundersTwo = `${process.env.PUBLIC_URL}/images/Mario-and-Adrian-2.jpg`;
   return (
-    <section className="about-section-container w-[100%] md:w-[90%] mx-auto">
+    <section className="observe-hide about-section-container w-[100%] md:w-[90%] mx-auto">
       <div className="about-section-left">
         <h1 className="text-2xl md:text-4xl lg:text-6xl text-center font-bold">
           Little Lemon

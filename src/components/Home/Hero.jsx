@@ -3,7 +3,7 @@ import React from "react";
 const Hero = () => {
   const atmosphere = `${process.env.PUBLIC_URL}/images/atmosphere.jpg`;
   return (
-    <section className="hero-section-container w-[100%] md:w-[90%]">
+    <section className="observe-hide hero-section-container w-[100%] md:w-[90%]">
       <div className="hero-section-left">
         <h1 className="text-2xl md:text-4xl lg:text-6xl text-center font-bold">
           Little Lemon

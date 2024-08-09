@@ -9,3 +9,14 @@
 body {
   overflow-x: hidden;
 }
+.observe-hide {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s ease;
+}
+.observe-show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
