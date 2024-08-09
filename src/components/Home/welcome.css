@@ -115,20 +115,20 @@
 @keyframes oneMove {
   0% {
     top: 90%;
-    opacity: 1;
+    opacity: 0;
   }
   100% {
     top: 92%;
-    opacity: 0;
+    opacity: 1;
   }
 }
 @keyframes twoMove {
   0% {
     top: 92%;
-    opacity: 1;
+    opacity: 0;
   }
   100% {
     top: 95%;
-    opacity: 0;
+    opacity: 1;
   }
 }
