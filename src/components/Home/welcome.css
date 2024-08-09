@@ -1,10 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+:root {
+  /* colors */
+  --shdow-color-one: #00000080;
+  /* fonts */
+  --font-josefin: "Josefin Sans", sans-serif;
+}
 .welcoming-image {
-  height: 100vh;
+  height: 100svh;
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100dvh;
+  height: 100svh;
+  z-index: -100;
 }
 .welcoming-image::before {
   content: "";
@@ -59,6 +65,52 @@
   right: 50%;
   transform: translate(50%, -50%);
   animation: twoMove 1s ease alternate infinite;
+}
+.welcome-nav-logo {
+  display: none;
+}
+.welcome-order-btn {
+  display: none;
+}
+@media screen and (max-width: 650px) {
+  .welcome-nav-logo {
+    /* design */
+    font-family: var(--font-josefin);
+    color: white;
+    /* layout */
+    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* position */
+    position: absolute;
+    top: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    /* size */
+  }
+  .welcome-nav-logo img {
+    width: 30px;
+  }
+  .welcome-order-btn {
+    /* design */
+    text-align: center;
+    font-family: var(--font-josefin);
+    color: black;
+    background-color: orange;
+    border-radius: 16px;
+    box-shadow: 0 0 10px var(--shdow-color-one);
+    /* position */
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    transform: translateX(50%);
+    /* layout */
+    display: block;
+    padding: 5px 20px;
+    margin-right: 5px;
+  }
 }
 @keyframes oneMove {
   0% {

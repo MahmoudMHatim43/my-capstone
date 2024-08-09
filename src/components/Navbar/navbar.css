@@ -24,7 +24,9 @@
   /* animation */
   transition: all 0.5s;
 }
-
+.nav-burger-menu-btn {
+  display: none;
+}
 /* ---- list ---- */
 .nav-container ul {
   /* design */
@@ -101,6 +103,52 @@
 }
 .theme-btn-container input:checked + label .theme-toggle-ball {
   animation: slideOn 0.5s linear forwards;
+}
+@media screen and (max-width: 650px) {
+  .nav-container {
+    /* layout */
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    padding: 5px 20px 300px 20px;
+    /* size */
+    height: 100vh;
+    width: 50svw;
+    /* position */
+    position: fixed;
+    top: 0;
+    left: 0svw;
+    transform: translateX(-100%);
+  }
+  .nav-container.active {
+    left: 50svw;
+  }
+  .nav-container ul {
+    /* layout */
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+  }
+  .nav-logo img {
+    /* size */
+    width: 100%;
+    height: 75px;
+  }
+  .theme-btn-container {
+    /* position */
+    position: relative;
+    bottom: 0;
+    right: 0;
+  }
+  .nav-burger-menu-btn {
+    display: block;
+    font-size: 2.5rem;
+    cursor: pointer;
+    /* position */
+    position: absolute;
+    top: 10px;
+    right: -50px;
+  }
 }
 /* custom animation */
 @keyframes slideOn {
