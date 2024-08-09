@@ -15,7 +15,7 @@ const UserComment = ({ user }) => {
       {/* comment */}
       <p className="p-2">{user.comment}</p>
       {/* rate */}
-      <span className="flex justify-end p-2">{user.rating}/5</span>
+      <span className="flex justify-end p-2 flex-1">{user.rating}/5</span>
     </div>
   );
 };

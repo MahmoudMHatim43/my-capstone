@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Milonga&display=swap");
 *,
 *::before,
 *::after {
@@ -11,12 +12,10 @@ body {
 }
 .observe-hide {
   opacity: 0;
-  filter: blur(5px);
   transform: translateX(-100%);
   transition: all 1s ease;
 }
 .observe-show {
   opacity: 1;
-  filter: blur(0);
   transform: translateX(0);
 }

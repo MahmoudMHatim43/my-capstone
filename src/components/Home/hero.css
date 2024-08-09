@@ -1,28 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Milonga&display=swap");
+:root {
+  /* colors */
+  --shdow-color-one: #00000080;
+  --shdow-color-two: #ffffff;
+  --seperate-border-color: #00000033;
+  --btn-color: #f4ce14;
+  /* fonts */
+  --font-josefin: "Josefin Sans", sans-serif;
+  --font-milonga: "Milonga", sans-serif;
+  /* sizes */
+  --section-height: 50svh;
+  --section-speration: 5svh;
+}
 .hero-section-container {
   /* design */
   font-family: "Josefin Sans", sans-serif;
+  border-bottom: 1px solid var(--seperate-border-color);
   /* layout */
   display: flex;
-  margin: 100vh auto 0 auto;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  align-items: center;
+  height: var(--section-height);
+  margin-top: 100svh;
+  margin-bottom: var(--section-speration);
 }
 .hero-section-left {
   /* layout */
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 10px;
 }
 .hero-section-left h2 {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--seperate-border-color);
 }
 .hero-section-right {
   /* layout */
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   padding: 10px;
 }
 .hero-section-right img {
@@ -33,27 +48,22 @@
   height: 75%;
   /* layout */
   object-fit: cover;
-  /* animation */
-  transition: all 1s ease;
-}
-.hero-section-right img:hover {
-  transform: scale(1.01);
 }
 .hero-book-btn {
   /* design */
   color: black;
   border: 1px solid;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  background-color: #f4ce14;
-  font-family: "Milonga", sans-serif;
-  font-size: 20px;
+  box-shadow: 0 0 5px var(--shdow-color-one);
+  background-color: var(--btn-color);
+  font-family: var(--font-milonga);
+  font-size: 1.2rem;
   /* layout */
   margin: auto;
-  padding: 10px 30px;
+  padding: 0.6em 1.8em;
   /* animation */
   transition: all 0.1s ease;
 }
 .hero-book-btn:hover {
   /* design */
-  transform: scale(1.02);
+  transform: scale(1.05);
 }

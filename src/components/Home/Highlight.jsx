@@ -6,7 +6,7 @@ import { GlobalContext } from "../../context/GlobalContext";
 const Highlight = () => {
   const { dishes } = React.useContext(GlobalContext);
   return (
-    <section className="observe-hide highlight-section-container mx-auto w-[100%] md:w-[90%]">
+    <section className="observe-hide highlight-section-container mx-auto w-[90%]">
       <div className="highlight-header">
         <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold">Special</h1>
         <button className="hightlight-order-btn">Order Now</button>
