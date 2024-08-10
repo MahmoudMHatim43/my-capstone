@@ -1,5 +1,6 @@
 import "./navbar.css";
 import React from "react";
+import { ThemeButton } from "./ThemeButton";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 import { GlobalContext } from "../../context/GlobalContext";
@@ -7,30 +8,29 @@ import { GlobalContext } from "../../context/GlobalContext";
 const Navbar = () => {
   /*------------------ hooks ------------------*/
   const [active, setActive] = React.useState("Home");
-  const { theme, changeTheme, mainColor, secondaryColor, pages } =
-    React.useContext(GlobalContext);
+  const { pages, mainColor, secondaryColor } = React.useContext(GlobalContext);
   /*-------------------------------------------*/
   const logo = `${process.env.PUBLIC_URL}/images/logo-no-bg.png`;
   return (
     <header>
-      <nav
-        className="nav-container"
-        style={{ backgroundColor: mainColor, color: secondaryColor }}
-      >
+      <nav className="nav-container flex items-center justify-between p-2 h-12 relative z-50 shadow-[0_5px_5px_#00000080] md:flex">
         <div>
           <GiHamburgerMenu
-            className="nav-burger-menu-btn"
+            className="nav-burger-menu-btn text-orange-400"
             onClick={showMenu}
-            style={{ color: "orange" }}
           />
         </div>
-        <div className="nav-logo">
-          <img src={logo} alt="little lemon logo" />
+        <div className="flex items-center gap-3 h-full font-josefin font-bold">
+          <img
+            src={logo}
+            alt="little lemon logo"
+            className="object-cover h-full"
+          />
           <h2 className="hidden md:text-3xl md:block lg:text-4xl">
             Little Lemon
           </h2>
         </div>
-        <ul className="w-full md:w-[70%] lg:w-[60%]">
+        <ul className="flex items-center justify-around w-[65%] lg:w-3/4 font-josefin">
           {pages.map((page) => {
             return (
               <NavLink
@@ -49,20 +49,7 @@ const Navbar = () => {
             );
           })}
         </ul>
-        <div className="theme-btn-container">
-          <input
-            className="invisible"
-            type="checkbox"
-            id="theme-btn"
-            onClick={changeTheme}
-          />
-          <label htmlFor="theme-btn">
-            <div className="theme-toggle-ball"></div>
-          </label>
-          <span className="text-md lg:text-lg font-semibold">
-            {theme === "light" ? "Light Mode" : "Dark Mode"}
-          </span>
-        </div>
+        <ThemeButton />
       </nav>
     </header>
   );

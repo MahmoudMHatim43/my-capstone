@@ -1,4 +1,3 @@
-import "./highlight.css";
 import React from "react";
 import { Card } from "./Card";
 import { GlobalContext } from "../../context/GlobalContext";

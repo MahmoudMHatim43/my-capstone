@@ -1,4 +1,3 @@
-import "./testimonials.css";
 import React from "react";
 import { UserComment } from "./UserComment";
 import { GlobalContext } from "../../context/GlobalContext";

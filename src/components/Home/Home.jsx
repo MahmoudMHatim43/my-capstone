@@ -1,3 +1,4 @@
+import "./home.css";
 import React from "react";
 import { Welcome } from "./Welcome";
 import { Hero } from "./Hero";

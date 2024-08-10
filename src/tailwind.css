@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  :root {
+    --font-josefin: "Josefin Sans", sans-serif;
+    --font-milonga: "Milonga", sans-serif;
+    --prime-color: #449955;
+    --second-color: #f4ce14;
+    --border-big: 25px;
+    --border-small: 16px;
+  }
+}

@@ -1,0 +1,292 @@
+/* WELCOME SCTION */
+.welcoming-image::before {
+  content: "";
+  background-color: black;
+  opacity: 0.75;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.welcome-chevron {
+  animation: moveChevron 1s linear alternate infinite;
+}
+.welcome-nav-logo {
+  display: none;
+}
+.welcome-order-btn {
+  display: none;
+}
+@keyframes moveChevron {
+  0% {
+    top: 94%;
+    opacity: 0.1;
+  }
+  100% {
+    top: 97%;
+    opacity: 1;
+  }
+}
+/* HERO SECTION */
+.hero-book-btn {
+  animation: buttonCall 1s infinite alternate ease-in-out;
+}
+@keyframes buttonCall {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* HIGHLIGHT SECTION */
+:root {
+  /* colors */
+  --shdow-color-one: #00000080;
+  --shdow-color-two: #ffffff;
+  --seperate-border-color: #00000033;
+  --card-color: #ff00003a;
+  --btn-color: #f4ce14;
+  /* fonts */
+  --font-josefin: "Josefin Sans", sans-serif;
+  --font-milonga: "Milonga", sans-serif;
+  /* sizes */
+  --section-height: 60svh;
+  --section-speration: 5svh;
+}
+.highlight-section-container {
+  /* design */
+  font-family: var(--font-josefin);
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* size */
+  height: var(--section-height);
+  margin-bottom: var(--section-speration);
+}
+.highlight-header {
+  /* layout */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hightlight-order-btn {
+  /* design */
+  color: black;
+  border: 1px solid;
+  box-shadow: 0 0 5px var(--shdow-color-one);
+  background-color: #f4ce14;
+  font-family: "Milonga", sans-serif;
+  font-size: 1.2rem;
+  /* layout */
+  padding: 0.6em 1.8em;
+  /* animation */
+  transition: all 0.1s ease;
+}
+.hightlight-order-btn:hover {
+  transform: scale(1.05);
+}
+.highlight-dishes-container {
+  /* design */
+  overflow-x: scroll;
+  overscroll-behavior-inline: contain;
+  /* layout */
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 23%;
+  column-gap: 15px;
+  padding: 10px;
+}
+@media screen and (max-width: 960px) {
+  .highlight-dishes-container {
+    grid-auto-columns: 35%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .highlight-dishes-container {
+    grid-auto-columns: 55%;
+  }
+}
+.special-card-container {
+  /* design */
+  cursor: pointer;
+  overflow: hidden;
+  background-color: var(--card-color);
+  box-shadow: 0px 0px 10px var(--shdow-color-one);
+  border-radius: 10px;
+  /* size */
+  min-height: 300px;
+  /* position */
+  position: relative;
+  /* animation */
+  transition: transform 0.2s ease;
+}
+.special-card-container:hover {
+  transform: scale(1.02);
+}
+.special-card-container img {
+  width: 100%;
+  height: 55%;
+  object-fit: cover;
+}
+.special-card-info {
+  padding: 5px;
+}
+.special-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* design */
+  font-weight: bold;
+}
+.special-card-description {
+  padding-top: 15px;
+}
+.special-card-rating {
+  /* design */
+  color: white;
+  background-color: #000000;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  /* layout */
+  padding: 0.5em;
+  /* position */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* TESTIMONIALS SECTION */
+:root {
+  /* colors */
+  --shdow-color-one: #00000080;
+  --shdow-color-two: #ffffff;
+  --seperate-border-color: #00000033;
+  --card-color: #ff00003a;
+  --btn-color: #f4ce14;
+  --comment-bg-color: #ffd50057;
+  /* fonts */
+  --font-josefin: "Josefin Sans", sans-serif;
+  --font-milonga: "Milonga", sans-serif;
+  /* sizes */
+  --section-height: 60svh;
+  --section-speration: 5svh;
+}
+.testimonials-section {
+  font-family: var(--font-josefin);
+  border-top: 1px solid var(--seperate-border-color);
+  /* layout */
+  padding-top: 10px;
+}
+.testimonials-section-container {
+  /* design */
+  overflow-x: scroll;
+  overscroll-behavior-inline: contain;
+  /* layout */
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, 1fr);
+  /* size */
+  height: 50svh;
+  gap: 10px;
+  padding: 10px;
+}
+.testimonials-user-container {
+  /* design */
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--comment-bg-color);
+  box-shadow: 0 0 5px var(--shdow-color-one);
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* size */
+  width: 250px;
+  transition: all 0.3s;
+}
+.testimonials-user-container:hover {
+  transform: scale(1.025);
+}
+
+/* ABOUT SECTION */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Milonga&display=swap");
+.about-section-container {
+  /* design */
+  font-family: "Josefin Sans", sans-serif;
+  /* layout */
+  display: flex;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+.about-section-left {
+  /* layout */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.about-section-left h2 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.about-section-right {
+  /* layout */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: relative;
+}
+.about-section-right img {
+  /* design */
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+  /* size */
+  width: 70%;
+  height: 50%;
+  /* layout */
+  object-fit: cover;
+  /* animation */
+  transition: all 1s ease;
+}
+.about-image-one {
+  margin: auto 0;
+}
+.about-section-right img:hover {
+  transform: scale(1.01);
+  z-index: 100;
+}
+.about-image-two {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  z-index: 1;
+}
+@media screen and (max-width: 1024px) {
+  .about-image-two {
+    display: none;
+  }
+  .about-image-one {
+    align-self: center;
+    justify-self: start;
+  }
+}
+.about-book-btn {
+  /* design */
+  color: black;
+  border: 1px solid;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background-color: #f4ce14;
+  font-family: "Milonga", sans-serif;
+  font-size: 20px;
+  /* layout */
+  margin: 25px auto;
+  padding: 10px 30px;
+  /* animation */
+  transition: all 0.1s ease;
+}
+.about-book-btn:hover {
+  /* design */
+  transform: scale(1.02);
+}
