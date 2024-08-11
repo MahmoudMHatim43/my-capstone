@@ -1,15 +1,15 @@
 import "./navbar.css";
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ThemeButton } from "./ThemeButton";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 import { GlobalContext } from "../../context/GlobalContext";
 
 const Navbar = () => {
-  const [active, setActive] = React.useState("Home");
-  const [menuOpen, setMenuOpen] = React.useState(false);
-  const { pages } = React.useContext(GlobalContext);
-  React.useEffect(() => {
+  const [active, setActive] = useState("Home");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { pages } = useContext(GlobalContext);
+  useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
   const logo = `${process.env.PUBLIC_URL}/images/logo-no-bg.png`;

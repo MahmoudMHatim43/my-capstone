@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { UserComment } from "./UserComment";
 import { GlobalContext } from "../../context/GlobalContext";
 
 const Testimonials = () => {
-  const { users } = React.useContext(GlobalContext);
+  const { users } = useContext(GlobalContext);
   return (
     <section className="observe-hide w-full md:w-[90%] m-[0_auto_2.5svh] p-4 testimonials-section">
       <h1 className="text-2xl md:text-4xl lg:text-5xl font-josefin font-bold">

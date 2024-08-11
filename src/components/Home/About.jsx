@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const About = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     isTheReduceMotionIsOn();
   }, []);
   const foundersOne = `${process.env.PUBLIC_URL}/images/Mario-and-Adrian-1.webp`;

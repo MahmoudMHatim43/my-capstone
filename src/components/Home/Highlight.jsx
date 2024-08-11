@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Card } from "./Card";
 import { GlobalContext } from "../../context/GlobalContext";
 
 const Highlight = () => {
-  const { dishes } = React.useContext(GlobalContext);
+  const { dishes } = useContext(GlobalContext);
   return (
     <section className="observe-hide flex flex-col p-4 gap-3 h-[60svh] w-full md:w-[90%] m-[0_auto_2.5svh] font-josefin">
       <div className="flex justify-between items-center px-4 py-2 w-full border-b border-[#e1e1e1]">
