@@ -5,7 +5,7 @@ import { GlobalContext } from "../../context/GlobalContext";
 const Highlight = () => {
   const { dishes } = React.useContext(GlobalContext);
   return (
-    <section className="observe-hide flex flex-col p-4 gap-3 h-[60svh] w-full md:w-[90%] m-[0_auto_5svh] font-josefin">
+    <section className="observe-hide flex flex-col p-4 gap-3 h-[60svh] w-full md:w-[90%] m-[0_auto_2.5svh] font-josefin">
       <div className="flex justify-between items-center px-4 py-2 w-full border-b border-[#e1e1e1]">
         <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">Specials</h1>
         <button className="hl-order-btn p-[0.6em_1.8em] text-lg font-milonga shadow-[0_0_3px] bg-prime">

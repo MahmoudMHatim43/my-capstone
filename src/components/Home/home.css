@@ -48,59 +48,61 @@
   background-color: #4957;
   border-radius: 25px;
 }
+.hl-dishes-container {
+  scrollbar-width: thin;
+  scrollbar-color: #4957 #e1e1e141;
+}
+.hl-dishes-container::-webkit-scrollbar {
+  height: 5px;
+}
+.hl-dishes-container::-webkit-scrollbar-track {
+  background: #e1e1e141;
+}
+.hl-dishes-container::-webkit-scrollbar-thumb {
+  background-color: #4957;
+  border-radius: 25px;
+}
+.hl-dishes-container {
+  scrollbar-width: thin;
+  scrollbar-color: #4957 #e1e1e141;
+}
+.hl-dishes-container::-moz-scrollbar {
+  height: 5px;
+}
+.hl-dishes-container::-moz-scrollbar-track {
+  background: #e1e1e141;
+}
+.hl-dishes-container::-moz-scrollbar-thumb {
+  background-color: #4957;
+  border-radius: 25px;
+}
+.hl-dishes-container {
+  scrollbar-width: thin;
+  scrollbar-color: #4957 #e1e1e141;
+}
+.hl-dishes-container::-ms-scrollbar {
+  width: 5px;
+}
+.hl-dishes-container::-ms-scrollbar-track {
+  background: #e1e1e141;
+}
+.hl-dishes-container::-ms-scrollbar-thumb {
+  background-color: #4957;
+  border-radius: 25px;
+}
 /* TESTIMONIALS SECTION */
-:root {
-  /* colors */
-  --shdow-color-one: #00000080;
-  --shdow-color-two: #ffffff;
-  --seperate-border-color: #00000033;
-  --card-color: #ff00003a;
-  --btn-color: #f4ce14;
-  --comment-bg-color: #ffd50057;
-  /* fonts */
-  --font-josefin: "Josefin Sans", sans-serif;
-  --font-milonga: "Milonga", sans-serif;
-  /* sizes */
-  --section-height: 60svh;
-  --section-speration: 5svh;
+.test-cards-section:hover .testimonials-user-container {
+  filter: blur(1.5px);
 }
-.testimonials-section {
-  font-family: var(--font-josefin);
-  border-top: 1px solid var(--seperate-border-color);
-  /* layout */
-  padding-top: 10px;
-}
-.testimonials-section-container {
-  /* design */
-  overflow-x: scroll;
-  overscroll-behavior-inline: contain;
-  /* layout */
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(2, 1fr);
-  /* size */
-  height: 50svh;
-  gap: 10px;
-  padding: 10px;
+.test-cards-section:hover .testimonials-user-container:hover {
+  filter: blur(0px);
 }
 .testimonials-user-container {
-  /* design */
-  border-radius: 16px;
-  overflow: hidden;
-  background-color: var(--comment-bg-color);
-  box-shadow: 0 0 5px var(--shdow-color-one);
-  /* layout */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* size */
-  width: 250px;
-  transition: all 0.3s;
+  transition: all 0.25s;
 }
 .testimonials-user-container:hover {
-  transform: scale(1.025);
+  transform: scale(1.05);
 }
-
 /* ABOUT SECTION */
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Milonga&display=swap");
