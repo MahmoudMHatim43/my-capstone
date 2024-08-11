@@ -30,7 +30,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="little lemon logo"
-            className="object-cover h-full"
+            className="object-cover h-[50px] md:h-full"
           />
           <h2 className="hidden md:text-3xl md:block lg:text-4xl">
             Little Lemon

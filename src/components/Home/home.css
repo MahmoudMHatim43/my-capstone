@@ -35,9 +35,21 @@
   animation: buttonCall 1s infinite alternate ease-in-out;
 }
 .scc {
-  transition: transform 0.25s ease;
+  transition: all 0.25s ease;
+}
+.hl-dishes-container {
+  scrollbar-width: thin;
+  scrollbar-color: #4957 #e1e1e141;
+  transition: all 0.3s ease;
+}
+.hl-dishes-container:hover .scc {
+  filter: blur(1.5px);
+}
+.hl-dishes-container:hover .scc:hover {
+  filter: blur(0px);
 }
 .scc:hover {
+  transition: all 0.3s ease;
   transform: scale(1.02);
 }
 .hl-dishes-container::-webkit-scrollbar {
@@ -61,10 +73,6 @@
 .hl-dishes-container::-webkit-scrollbar-thumb {
   background-color: #4957;
   border-radius: 25px;
-}
-.hl-dishes-container {
-  scrollbar-width: thin;
-  scrollbar-color: #4957 #e1e1e141;
 }
 .hl-dishes-container::-moz-scrollbar {
   height: 5px;
@@ -103,85 +111,85 @@
 .testimonials-user-container:hover {
   transform: scale(1.05);
 }
+.test-cards-section::-webkit-scrollbar {
+  background-color: #e1e1e141;
+  height: 5px;
+}
+.test-cards-section::-webkit-scrollbar-thumb {
+  background-color: #4957;
+  border-radius: 25px;
+}
+.test-cards-section {
+  scrollbar-width: thin;
+  scrollbar-color: #4957 #e1e1e141;
+}
+.test-cards-section::-webkit-scrollbar {
+  height: 5px;
+}
+.test-cards-section::-webkit-scrollbar-track {
+  background: #e1e1e141;
+}
+.test-cards-section::-webkit-scrollbar-thumb {
+  background-color: #4957;
+  border-radius: 25px;
+}
+.test-cards-section {
+  scrollbar-width: thin;
+  scrollbar-color: #4957 #e1e1e141;
+}
+.test-cards-section::-moz-scrollbar {
+  height: 5px;
+}
+.test-cards-section::-moz-scrollbar-track {
+  background: #e1e1e141;
+}
+.test-cards-section::-moz-scrollbar-thumb {
+  background-color: #4957;
+  border-radius: 25px;
+}
+.test-cards-section {
+  scrollbar-width: thin;
+  scrollbar-color: #4957 #e1e1e141;
+}
+.test-cards-section::-ms-scrollbar {
+  width: 5px;
+}
+.test-cards-section::-ms-scrollbar-track {
+  background: #e1e1e141;
+}
+.test-cards-section::-ms-scrollbar-thumb {
+  background-color: #4957;
+  border-radius: 25px;
+}
 /* ABOUT SECTION */
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Milonga&display=swap");
-.about-section-container {
-  /* design */
-  font-family: "Josefin Sans", sans-serif;
-  /* layout */
-  display: flex;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-}
-.about-section-left {
-  /* layout */
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-.about-section-left h2 {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-.about-section-right {
-  /* layout */
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  position: relative;
-}
-.about-section-right img {
-  /* design */
-  border-radius: 10px;
-  box-shadow: 0 0 10px black;
-  /* size */
-  width: 70%;
-  height: 50%;
-  /* layout */
-  object-fit: cover;
-  /* animation */
-  transition: all 1s ease;
-}
-.about-image-one {
-  margin: auto 0;
-}
-.about-section-right img:hover {
-  transform: scale(1.01);
-  z-index: 100;
-}
-.about-image-two {
-  position: absolute;
-  bottom: 10%;
-  right: 10%;
-  z-index: 1;
-}
-@media screen and (max-width: 1024px) {
-  .about-image-two {
-    display: none;
-  }
-  .about-image-one {
-    align-self: center;
-    justify-self: start;
-  }
-}
 .about-book-btn {
-  /* design */
-  color: black;
-  border: 1px solid;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  background-color: #f4ce14;
-  font-family: "Milonga", sans-serif;
-  font-size: 20px;
-  /* layout */
-  margin: 25px auto;
-  padding: 10px 30px;
-  /* animation */
-  transition: all 0.1s ease;
+  animation: buttonCall 1s infinite alternate ease-in-out;
 }
-.about-book-btn:hover {
-  /* design */
-  transform: scale(1.02);
+.Adrian-Mario-images[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 5%,
+    white 95%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
+}
+.Adrian-Mario-images[data-animated="true"] .about-image-one {
+  position: absolute;
+  right: 50%;
+  transform: translateX(-50%);
+  animation: scroll 10s linear infinite;
+}
+.Adrian-Mario-images[data-animated="true"] .about-image-two {
+  position: absolute;
+  right: 50%;
+  transform: translateX(-50%);
+  animation: scroll 10s linear 5s infinite;
+}
+.about-image-three {
+  opacity: 0;
 }
 /* ANIMATIONS */
 @keyframes buttonCall {
@@ -190,5 +198,10 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+@keyframes scroll {
+  to {
+    right: -150%;
   }
 }

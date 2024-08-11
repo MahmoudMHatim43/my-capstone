@@ -1,18 +1,23 @@
 import React from "react";
 
 const About = () => {
+  React.useEffect(() => {
+    isTheReduceMotionIsOn();
+  }, []);
   const foundersOne = `${process.env.PUBLIC_URL}/images/Mario-and-Adrian-1.jpg`;
   const foundersTwo = `${process.env.PUBLIC_URL}/images/Mario-and-Adrian-2.jpg`;
   return (
-    <section className="observe-hide about-section-container w-[100%] md:w-[90%] mx-auto">
-      <div className="about-section-left">
-        <h1 className="text-2xl md:text-4xl lg:text-6xl text-center font-bold">
-          Little Lemon
-        </h1>
-        <h2 className="mb-2.5 text-lg md:text-xl lg:text-2xl text-center font-bold italic">
-          Sudan
-        </h2>
-        <p className="text-sm md:text-lg lg:text-xl">
+    <section className="observe-hide flex flex-col lg:flex-row p-4 w-full md:w-[90%] m-[0_auto_2.5svh] font-josefin">
+      <div className="flex flex-col gap-3 p-3">
+        <div className="flex flex-col">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
+            Little Lemon
+          </h1>
+          <h2 className="pb-1 text-xl md:text-2xl font-bold border-b border-[#e1e1e1]">
+            Sudan
+          </h2>
+        </div>
+        <p className="text-base md:text-lg">
           In January 2022, best friends Adrian and Mario decided to turn their
           shared dream of opening a restaurant into reality. One February
           afternoon, while enjoying a lemon tart, inspiration struck, and they
@@ -29,14 +34,28 @@ const About = () => {
           shared their passion for good food and hospitality with their
           customers.
         </p>
-        <button className="about-book-btn">Read More</button>
+        <button className="about-book-btn m-[5%_auto] p-[0.6em_1.8em] text-lg font-milonga shadow-[0_0_3px] bg-prime">
+          Read More
+        </button>
       </div>
-      <div className="about-section-right">
-        <img src={foundersOne} alt="Andrian" className="about-image-one" />
-        <img src={foundersTwo} alt="Mario" className="about-image-two" />
+      <div className="Adrian-Mario-images grid grid-flow-col auto-cols-[100%] overflow-x-scroll gap-3">
+        <div className="Adrian-Mario-images-scroller relative w-full flex gap-3">
+          <img src={foundersOne} alt="Andrian" className="about-image-one" />
+          <img src={foundersTwo} alt="Mario" className="about-image-two" />
+          <img src={foundersTwo} alt="random" className="about-image-three" />
+        </div>
       </div>
     </section>
   );
+  function isTheReduceMotionIsOn() {
+    const scroller = document.querySelector(".Adrian-Mario-images");
+    scroller.setAttribute(
+      "data-animated",
+      !window.matchMedia("(prefers-reduced-motion:reduce)").matches
+        ? true
+        : false
+    );
+  }
 };
 
 export { About };
