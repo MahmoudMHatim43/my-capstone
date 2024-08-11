@@ -7,8 +7,8 @@ const Welcome = () => {
   const restaurantImage = `${process.env.PUBLIC_URL}/images/restaurant.jpg`;
   return (
     <section className="welcoming-image h-[100svh] w-full absolute top-0 z-[-100]">
-      <div className="flex flex-col justify-center items-center absolute top-2.5 right-1/2 translate-x-1/2 md:hidden">
-        <img src={logo} alt="little lemon logo" className="w-1/3" />
+      <div className="flex flex-col justify-center items-center gap-2 absolute top-2.5 right-1/2 translate-x-1/2 md:hidden">
+        <img src={logo} alt="little lemon logo" className="w-1/5" />
         <h2 className="text-white text-xl text-center font-josefin">
           Little Lemon
         </h2>

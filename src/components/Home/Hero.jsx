@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const Hero = () => {
   const atmosphere = `${process.env.PUBLIC_URL}/images/atmosphere.jpg`;
   return (
-    <section className="observe-hide flex gap-4 w-full md:w-[90%] min-h-[50svh] m-[105svh_auto_25svh] p-4 font-josefin">
+    <section className="observe-hide flex gap-4 w-full md:w-[90%] min-h-[50svh] m-[105svh_auto_5svh] p-4 font-josefin">
       {/* left */}
       <div className="flex-1 flex flex-col gap-2 justify-around lg:justify-start min-h-full">
         <div className="flex flex-col">

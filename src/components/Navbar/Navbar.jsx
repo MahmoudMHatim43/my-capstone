@@ -6,18 +6,24 @@ import { NavLink } from "react-router-dom";
 import { GlobalContext } from "../../context/GlobalContext";
 
 const Navbar = () => {
-  /*------------------ hooks ------------------*/
   const [active, setActive] = React.useState("Home");
-  const { pages, mainColor, secondaryColor } = React.useContext(GlobalContext);
-  /*-------------------------------------------*/
+  const [menuOpen, setMenuOpen] = React.useState(false);
+  const { pages } = React.useContext(GlobalContext);
+  React.useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+  }, [menuOpen]);
   const logo = `${process.env.PUBLIC_URL}/images/logo-no-bg.png`;
   return (
     <header>
-      <nav className="nav-container flex items-center justify-between p-2 h-12 relative z-50 shadow-[0_5px_5px_#00000080] md:flex">
+      <nav
+        className={`nav-container ${
+          menuOpen ? "active" : ""
+        } flex items-center justify-between p-2 h-12 relative z-50 text-white shadow-[0_5px_5px_#00000080] md:flex`}
+      >
         <div>
           <GiHamburgerMenu
             className="nav-burger-menu-btn text-orange-400"
-            onClick={showMenu}
+            onClick={() => setMenuOpen(!menuOpen)}
           />
         </div>
         <div className="flex items-center gap-3 h-full font-josefin font-bold">
@@ -36,12 +42,13 @@ const Navbar = () => {
               <NavLink
                 key={page}
                 to={`/${page === "Home" ? "" : page.toLowerCase()}`}
-                className="cursor-pointer text-lg"
+                className={`cursor-pointer text-lg text-${
+                  active === page ? "orange-400" : ""
+                }`}
                 onClick={() => {
                   setActive(page);
-                  showMenu();
+                  setMenuOpen(false);
                 }}
-                style={{ color: active === page ? "orange" : "" }}
               >
                 {page === "LOGIN" ? "| " : ""}
                 {page === "Order" ? "Order Online" : page}
@@ -53,13 +60,6 @@ const Navbar = () => {
       </nav>
     </header>
   );
-  function showMenu() {
-    const nav = document.querySelector(".nav-container");
-    nav.classList.toggle("active");
-    nav.classList.contains("active")
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "auto");
-  }
 };
 
 export { Navbar };
