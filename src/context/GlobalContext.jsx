@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect, createContext } from "react";
 
-const GlobalContext = React.createContext(undefined);
+const GlobalContext = createContext(undefined);
 const pages = ["Home", "About", "Menu", "Reserve", "Order", "LOGIN"];
 const dishes = [
   {
@@ -220,16 +220,15 @@ const users = [
     rating: 1,
   },
 ];
-
 const ContextProvider = ({ children }) => {
-  const [theme, setTheme] = React.useState("light");
-  const mainColor = theme === "light" ? "#e1e1e1" : "#2f2f2f";
-  const secondaryColor = theme === "light" ? "#2f2f2f" : "#e1e1e1";
-  React.useEffect(() => {
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
     document.body.style.backgroundColor =
       theme === "light" ? "white" : "#1b1b1b";
     document.body.style.color = theme === "light" ? "#1b1b1b" : "white";
   }, [theme]);
+  const mainColor = theme === "light" ? "#e1e1e1" : "#2f2f2f";
+  const secondaryColor = theme === "light" ? "#2f2f2f" : "#e1e1e1";
   return (
     <GlobalContext.Provider
       value={{

@@ -1,21 +1,22 @@
 import React from "react";
-import { DateAndTime } from "./DateAndTime";
-import { GuestsAndOccasion } from "./GuestsAndOccasion";
-import { PersonalInformation } from "./PersonalInformation";
+import { Names } from "./Names";
+import { Email } from "./Email";
+import { Phone } from "./Phone";
+import { DateAndTime } from "./DataAndTime";
+import { Occasion } from "./Occasion";
+import { SpecialRequest } from "./SpecialRequest";
 const BookingForm = () => {
   return (
-    <div className="flex items-center w-[90%] m-auto pt-[15svh] font-josefin">
-      <form className="flex flex-col justify-around gap-8 h-full w-full p-3 text-white bg-prime rounded-small shadow-[0_0_10px] shadow-[#00000080]">
-        <PersonalInformation />
+    <form className="mx-auto mb-32 mt-32 px-6 py-10 max-w-xl md:mt-20 font-josefin bg-[#f5f5f590] rounded-small">
+      <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+        <Names />
+        <Email />
+        <Phone />
         <DateAndTime />
-        <GuestsAndOccasion />
-        <input
-          type="submit"
-          value="Make Your Reservation"
-          className="w-80 mx-auto p-2 text-xl text-black font-milonga md:text-2xl bg-second rounded-small shadow-[0_0_10px] shadow-[#00000080]"
-        />
-      </form>
-    </div>
+        <Occasion />
+        <SpecialRequest />
+      </div>
+    </form>
   );
 };
 
