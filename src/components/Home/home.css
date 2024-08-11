@@ -180,13 +180,13 @@
   position: absolute;
   right: 50%;
   transform: translateX(-50%);
-  animation: scroll 10s linear infinite;
+  animation: scroll 15s linear infinite;
 }
 .Adrian-Mario-images[data-animated="true"] .about-image-two {
   position: absolute;
   right: 50%;
   transform: translateX(-50%);
-  animation: scroll 10s linear 5s infinite;
+  animation: scroll 15s linear 7.5s infinite;
 }
 .about-image-three {
   opacity: 0;
