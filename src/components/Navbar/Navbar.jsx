@@ -2,13 +2,15 @@ import "./navbar.css";
 import React, { useContext, useEffect, useState } from "react";
 import { ThemeButton } from "./ThemeButton";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { GlobalContext } from "../../context/GlobalContext";
 
 const Navbar = () => {
-  const [active, setActive] = useState("Home");
   const [menuOpen, setMenuOpen] = useState(false);
   const { pages } = useContext(GlobalContext);
+  const location = useLocation();
+  console.log(location);
+
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
@@ -43,10 +45,13 @@ const Navbar = () => {
                 key={page}
                 to={`/${page === "Home" ? "" : page.toLowerCase()}`}
                 className={`cursor-pointer text-lg text-${
-                  active === page ? "orange-400" : ""
+                  location.pathname === `/${page.toLowerCase()}`
+                    ? "orange-400"
+                    : location.pathname === "/" && page === "Home"
+                    ? "orange-400"
+                    : null
                 }`}
                 onClick={() => {
-                  setActive(page);
                   setMenuOpen(false);
                 }}
               >

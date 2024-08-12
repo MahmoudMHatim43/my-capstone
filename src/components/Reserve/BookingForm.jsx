@@ -5,7 +5,9 @@ import { Phone } from "./Phone";
 import { DateAndTime } from "./DataAndTime";
 import { Occasion } from "./Occasion";
 import { SpecialRequest } from "./SpecialRequest";
+import { NavLink } from "react-router-dom";
 const BookingForm = () => {
+  const [done, setDone] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
@@ -25,18 +27,34 @@ const BookingForm = () => {
     handleChange,
     handleBlur,
   };
-  return (
+  return done ? (
+    <div className="mx-auto mb-32 mt-32 px-6 py-10 max-w-xl md:mt-20 font-josefin bg-[#f5f5f590] rounded-small">
+      <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+        <h1 className="text-2xl lg:text-4xl text-center font-bold">
+          Thank you for your reservation
+        </h1>
+        <p className="text-center text-base lg:text-2xl">
+          We will contact you shortly and an email will be sent to you
+        </p>
+        <button className="w-full text-base lg:text-2xl p-[0.5em_1em] bg-prime text-white">
+          <NavLink to="/">Return to Homepage</NavLink>
+        </button>
+      </div>
+    </div>
+  ) : (
     <form
       onSubmit={handleSubmit}
       className="mx-auto mb-32 mt-32 px-6 py-10 max-w-xl md:mt-20 font-josefin bg-[#f5f5f590] rounded-small"
     >
       <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-        <Names {...formProps} />
-        <Email {...formProps} />
-        <Phone {...formProps} />
-        <DateAndTime {...formProps} />
-        <Occasion {...formProps} />
-        <SpecialRequest {...formProps} />
+        <>
+          <Names {...formProps} />
+          <Email {...formProps} />
+          <Phone {...formProps} />
+          <DateAndTime {...formProps} />
+          <Occasion {...formProps} />
+          <SpecialRequest {...formProps} />
+        </>
       </div>
     </form>
   );
@@ -50,6 +68,7 @@ const BookingForm = () => {
       setErrors({});
       setTouched({});
       setDisabled(true);
+      setDone(true);
     } else {
       alert("Please fill out all required fields.");
     }

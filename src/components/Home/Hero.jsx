@@ -30,9 +30,12 @@ const Hero = () => {
           alt="atmosphere"
           className="object-cover h-[75%] shadow-[0px_0px_5px] rounded-2xl"
         />
-        <button className="hero-book-btn m-[5%_auto] p-[0.6em_1.8em] text-lg font-milonga shadow-[0_0_3px] bg-prime">
-          <NavLink to="/reserve">Reserve Table</NavLink>
-        </button>
+        <NavLink
+          to="/reserve"
+          className="hero-book-btn m-[5%_auto] p-[0.6em_1.8em] text-lg font-milonga shadow-[0_0_3px] bg-prime"
+        >
+          Reserve Table
+        </NavLink>
       </div>
     </section>
   );

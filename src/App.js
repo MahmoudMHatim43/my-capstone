@@ -1,6 +1,7 @@
 import "./App.css";
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { Routes, Route, useLocation } from "react-router-dom";
 /*------------------------components------------------------*/
 import { Navbar } from "./components/Navbar/Navbar";
 import { Footer } from "./Footer/Footer";
@@ -12,20 +13,30 @@ import { Order } from "./components/Order/Order";
 import { Login } from "./components/Login/Login";
 /*----------------------------------------------------------*/
 function App() {
+  const location = useLocation();
+  useEffect(() => {
+    scrollToTop();
+  }, [location.pathname]);
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/menu" element={<Menu />}></Route>
-        <Route path="/reserve" element={<Reserve />}></Route>
-        <Route path="/order" element={<Order />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-      </Routes>
+      <TransitionGroup>
+        <CSSTransition key={location.key} classNames="fade" timeout={500}>
+          <Routes location={location}>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/menu" element={<Menu />}></Route>
+            <Route path="/reserve" element={<Reserve />}></Route>
+            <Route path="/order" element={<Order />}></Route>
+            <Route path="/login" element={<Login />}></Route>
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
       <Footer />
     </>
   );
 }
-
+function scrollToTop() {
+  window.scrollTo(0, 0);
+}
 export default App;
