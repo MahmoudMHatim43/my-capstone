@@ -1,6 +1,6 @@
 import React from "react";
 
-const DateAndTime = () => {
+const DateAndTime = ({ data, errors, touched, handleChange, handleBlur }) => {
   return (
     <>
       <div className="flex flex-col gap-2">
@@ -14,8 +14,23 @@ const DateAndTime = () => {
           type="date"
           id="date"
           className="border border-gray-400 rounded-md px-2 py-1"
-          required
+          name="date"
+          value={data.date}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          style={{
+            border: `1px solid ${
+              touched.date && errors.date
+                ? "red"
+                : touched.date
+                ? "green"
+                : null
+            }`,
+          }}
         />
+        {touched.date && errors.date && (
+          <p className="text-red-500 text-xs mt-1">{errors.date}</p>
+        )}
       </div>
       <div className="flex flex-col gap-2">
         <label
@@ -27,7 +42,19 @@ const DateAndTime = () => {
         <select
           id="time"
           className="border border-gray-400 rounded-md px-2 py-1"
-          required
+          name="time"
+          value={data.time}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          style={{
+            border: `1px solid ${
+              touched.time && errors.time
+                ? "red"
+                : touched.time
+                ? "green"
+                : null
+            }`,
+          }}
         >
           <option value="">Select a time</option>
           <option value="10:00 AM">10:00 AM</option>
@@ -43,6 +70,9 @@ const DateAndTime = () => {
           <option value="08:00 PM">08:00 PM</option>
           <option value="09:00 PM">09:00 PM</option>
         </select>
+        {touched.time && errors.time && (
+          <p className="text-red-500 text-xs mt-1">{errors.time}</p>
+        )}
       </div>
     </>
   );

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const Occasion = () => {
+const Occasion = ({ data }) => {
   const [selectedOccasion, setSelectedOccasion] = useState("");
+  useEffect(() => {
+    data.occasion = selectedOccasion !== "" ? selectedOccasion : data.occasion;
+  }, [selectedOccasion, data]);
   const [isOpen, setIsOpen] = useState(false);
-
   const occasions = [
     "Birthday",
     "Engagement",
@@ -37,7 +39,7 @@ const Occasion = () => {
             toggleDropdown();
           }}
         >
-          {selectedOccasion || "Occasion"}
+          {selectedOccasion || "optional"}
           <span className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
             <svg
               className="w-4 h-4 text-gray-700"

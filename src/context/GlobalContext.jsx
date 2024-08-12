@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext } from "react";
 
 const GlobalContext = createContext(undefined);
+
 const pages = ["Home", "About", "Menu", "Reserve", "Order", "LOGIN"];
 const dishes = [
   {
