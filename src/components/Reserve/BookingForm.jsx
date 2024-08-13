@@ -8,16 +8,22 @@ import { SpecialRequest } from "./SpecialRequest";
 import { NavLink } from "react-router-dom";
 const BookingForm = () => {
   const [done, setDone] = useState(false);
-  const [disabled, setDisabled] = useState(true);
+  const [disabled, setDisabled] = useState(false);
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    date: "",
+    time: "",
+    occasion: "",
+    specialRequest: "",
+  });
   useEffect(() => {
-    if (Object.keys(formData).length >= 7) {
-      setDisabled(false);
-    } else {
-      setDisabled(true);
-    }
+    const isValid = validate();
+    isValid ? setDisabled(false) : setDisabled(true);
   }, [formData]);
   const formProps = {
     isDisabled: disabled,
@@ -84,9 +90,7 @@ const BookingForm = () => {
   }
   function validateField(field, value) {
     let validationErrors = { ...errors };
-    const phoneRegex =
-      /^\+?[1-9]\d{1,14}$|^(\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}$/;
-
+    const phoneRegex = /^[0-9]{9}$/;
     switch (field) {
       case "firstName":
         !value
@@ -101,15 +105,15 @@ const BookingForm = () => {
       case "email":
         !value
           ? (validationErrors.email = "Email is required")
-          : !/\S+@\S+\.\S+/.test(formData.email)
+          : !/\S+@\S+\.\S+/.test(value)
           ? (validationErrors.email = "Email address is invalid")
           : delete validationErrors.email;
         break;
       case "phoneNumber":
         !value
           ? (validationErrors.phoneNumber = "Phone number is required")
-          : phoneRegex.test(formData.email)
-          ? (validationErrors.phoneNumber = "Email address is invalid")
+          : phoneRegex.test(value)
+          ? (validationErrors.phoneNumber = "Phone number is invalid")
           : delete validationErrors.phoneNumber;
         break;
       case "date":
@@ -135,16 +139,16 @@ const BookingForm = () => {
   function validate() {
     const validationErrors = {};
     const checkPoints = [
-      formData.firstName,
-      formData.lastName,
-      formData.email,
-      formData.phoneNumber,
-      formData.date,
-      formData.time,
-      formData.occasion,
+      "firstName",
+      "lastName",
+      "email",
+      "phoneNumber",
+      "date",
+      "time",
+      "occasion",
     ];
     checkPoints.forEach((point) => {
-      if (!point) validationErrors[point] = "Required";
+      if (!formData[point]) validationErrors[point] = "Required";
     });
     setErrors(validationErrors);
     return Object.keys(validationErrors).length === 0;

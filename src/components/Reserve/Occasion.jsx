@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const Occasion = ({ data }) => {
-  const [selectedOccasion, setSelectedOccasion] = useState("");
+  const [selectedOccasion, setSelectedOccasion] = useState("Optional");
   useEffect(() => {
     data.occasion = selectedOccasion !== "" ? selectedOccasion : data.occasion;
   }, [selectedOccasion, data]);
@@ -39,7 +39,7 @@ const Occasion = ({ data }) => {
             toggleDropdown();
           }}
         >
-          {selectedOccasion || "optional"}
+          {selectedOccasion}
           <span className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
             <svg
               className="w-4 h-4 text-gray-700"
