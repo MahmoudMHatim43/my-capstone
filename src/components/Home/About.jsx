@@ -13,9 +13,8 @@ const About = () => {
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
             Little Lemon
           </h1>
-          <h2 className="pb-1 text-xl md:text-2xl font-bold border-b border-[#e1e1e1]">
-            Sudan
-          </h2>
+          <h2 className="pb-1 text-xl md:text-2xl font-bold">Sudan</h2>
+          <hr className="w-[50%] lg:w-full" />
         </div>
         <p className="text-base md:text-lg">
           In January 2022, best friends Adrian and Mario decided to turn their
