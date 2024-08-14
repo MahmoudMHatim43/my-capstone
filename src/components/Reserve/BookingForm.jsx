@@ -5,9 +5,11 @@ import { Phone } from "./Phone";
 import { DateAndTime } from "./DataAndTime";
 import { Occasion } from "./Occasion";
 import { SpecialRequest } from "./SpecialRequest";
-import { NavLink } from "react-router-dom";
+import { FormSent } from "./FormSent";
+import { Alert } from "./Alert";
 const BookingForm = () => {
   const [done, setDone] = useState(false);
+  const [alertOn, setAlertOn] = useState(false);
   const [disabled, setDisabled] = useState(false);
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
@@ -25,6 +27,9 @@ const BookingForm = () => {
     const isValid = validate();
     isValid ? setDisabled(false) : setDisabled(true);
   }, [formData]);
+  useEffect(() => {
+    scrollToTop();
+  }, [done]);
   const formProps = {
     isDisabled: disabled,
     data: formData,
@@ -32,26 +37,18 @@ const BookingForm = () => {
     touched,
     handleChange,
     handleBlur,
+    handleAlert,
   };
   return done ? (
-    <div className="mx-auto mb-32 mt-32 px-6 py-10 max-w-xl md:mt-20 font-josefin bg-[#f5f5f590] rounded-small">
-      <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-        <h1 className="text-2xl lg:text-4xl text-center font-bold">
-          Thank you for your reservation
-        </h1>
-        <p className="text-center text-base lg:text-2xl">
-          We will contact you shortly and an email will be sent to you
-        </p>
-        <button className="w-full text-base lg:text-2xl p-[0.5em_1em] bg-prime text-white">
-          <NavLink to="/">Return to Homepage</NavLink>
-        </button>
-      </div>
-    </div>
+    <FormSent />
   ) : (
     <form
       onSubmit={handleSubmit}
       className="mx-auto mb-32 mt-32 px-6 py-10 max-w-xl md:mt-20 font-josefin bg-[#f5f5f590] rounded-small"
     >
+      {alertOn && (
+        <Alert message="Please fill out all required fields." type="error" />
+      )}
       <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
         <>
           <Names {...formProps} />
@@ -65,23 +62,24 @@ const BookingForm = () => {
     </form>
   );
   //functions:
+  function handleAlert() {
+    Object.keys(errors).length > 0 ? setAlertOn(true) : setAlertOn(false);
+  }
   function handleSubmit(e) {
     e.preventDefault();
     const isValid = validate();
     if (isValid) {
-      alert("Form submitted successfully!");
       setFormData({});
       setErrors({});
       setTouched({});
       setDisabled(true);
       setDone(true);
-    } else {
-      alert("Please fill out all required fields.");
+      setAlertOn(false);
     }
   }
   function handleChange(e) {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData({ ...formData, [name]: value });
   }
   function handleBlur(e) {
     const { name } = e.target;
@@ -152,6 +150,9 @@ const BookingForm = () => {
     });
     setErrors(validationErrors);
     return Object.keys(validationErrors).length === 0;
+  }
+  function scrollToTop() {
+    window.scrollTo(0, 0);
   }
 };
 

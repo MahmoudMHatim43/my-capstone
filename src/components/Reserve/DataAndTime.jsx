@@ -1,6 +1,13 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
 const DateAndTime = ({ data, errors, touched, handleChange, handleBlur }) => {
+  const [availableTimes, setAvailableTimes] = useState([]);
+
+  console.log(availableTimes);
+  useEffect(() => {
+    const date = new Date(data.date);
+    const time = fetchAPI(date);
+    setAvailableTimes(time);
+  }, [data.date]);
   return (
     <>
       <div className="flex flex-col gap-2">
@@ -57,18 +64,17 @@ const DateAndTime = ({ data, errors, touched, handleChange, handleBlur }) => {
           }}
         >
           <option value="">Select a time</option>
-          <option value="10:00 AM">10:00 AM</option>
-          <option value="11:00 AM">11:00 AM</option>
-          <option value="12:00 PM">12:00 PM</option>
-          <option value="01:00 PM">01:00 PM</option>
-          <option value="02:00 PM">02:00 PM</option>
-          <option value="03:00 PM">03:00 PM</option>
-          <option value="04:00 PM">04:00 PM</option>
-          <option value="05:00 PM">05:00 PM</option>
-          <option value="06:00 PM">06:00 PM</option>
-          <option value="07:00 PM">07:00 PM</option>
-          <option value="08:00 PM">08:00 PM</option>
-          <option value="09:00 PM">09:00 PM</option>
+          {availableTimes && availableTimes.length > 0 ? (
+            availableTimes.map((time) => {
+              return (
+                <option value={time} key={time}>
+                  {time}
+                </option>
+              );
+            })
+          ) : (
+            <option>No time avialable</option>
+          )}
         </select>
         {touched.time && errors.time && (
           <p className="text-red-500 text-xs mt-1">{errors.time}</p>
@@ -76,6 +82,29 @@ const DateAndTime = ({ data, errors, touched, handleChange, handleBlur }) => {
       </div>
     </>
   );
+  function seededRandom(seed) {
+    var m = 2 ** 35 - 31;
+    var a = 185852;
+    var s = seed % m;
+    return function () {
+      return (s = (s * a) % m) / m;
+    };
+  }
+
+  function fetchAPI(date) {
+    let result = [];
+    let random = seededRandom(date.getDate());
+
+    for (let i = 17; i <= 23; i++) {
+      if (random() < 0.5) {
+        result.push(i + ":00");
+      }
+      if (random() < 0.5) {
+        result.push(i + ":30");
+      }
+    }
+    return result;
+  }
 };
 
 export { DateAndTime };

@@ -1,13 +1,6 @@
 import React from "react";
 
-const SpecialRequest = ({
-  isDisabled,
-  data,
-  errors,
-  touched,
-  handleChange,
-  handleBlur,
-}) => {
+const SpecialRequest = ({ isDisabled, data, handleChange, handleAlert }) => {
   return (
     <>
       <div className="sm:col-span-2">
@@ -38,6 +31,7 @@ const SpecialRequest = ({
             name="submit"
             className="block w-full rounded-md bg-prime px-3.5 py-2.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             style={{ opacity: isDisabled ? 0.5 : 1 }}
+            onClick={handleAlert}
           >
             Reserve A Table
           </button>
